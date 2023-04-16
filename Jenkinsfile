@@ -1,7 +1,7 @@
 pipeline{
     agent any
     triggers{
-        pollSCM'H/15 * * * *'
+        pollSCM('H/15 * * * *')
     }
     stages {
         stage('source checkout'){
@@ -17,7 +17,7 @@ pipeline{
         stage('Docker Build'){
             steps {
                 echo 'Docker Build starting'
-                bat '''docker build -t front-end:1 .'''
+                sh '''docker build -t front-end:1 .'''
             }
         }        
     }
