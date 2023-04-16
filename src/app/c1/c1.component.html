@@ -1,0 +1,37 @@
+
+
+
+<br>
+<div class="container">
+            <table >
+            <thead>
+                <tr>
+                <th>---------ID--------</th>
+                <th>-----CAR PLATE-----</th>
+                <th>-----AVAILABLE-----</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                <tr *ngFor="let cab of cabs">
+                <td class="">{{ cab.id }}</td>
+                <td>{{ cab.carPlate }}</td>
+                <td>{{ cab.available }}</td>
+                </tr>
+            </tbody>
+        
+            </table>
+        <br>
+            <h2>Book a Cab</h2>
+            <form>
+            <div class="form-group container">
+                <label for="id">CAB ID</label>
+                <input type="text" class="form-control" id="id" [(ngModel)]="id" name="id">
+            <button type="" class="btn btn-primary" (click)="getAllCabs()">SHOW CABS</button>
+            <button type="submit" class="btn btn-primary" (click)="bookCab()">Book</button>
+            </div>
+            </form>
+
+</div>
+  
+
